@@ -22,18 +22,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <header>
-        <nav>
-          <ul className='flex items-center'>
-            {links.map(({ href, label }) => (
-              <li key={href} className='px-4 text-2xl'>
-                <Link href={href}>{label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} p-10 h-screen w-screen`}>
+        <header>
+          <nav>
+            <ul className='flex items-center'>
+              {links.map(({ href, label }) => (
+                <li key={href} className='px-4 text-2xl'>
+                  <Link href={href}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
